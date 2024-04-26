@@ -474,13 +474,3 @@ main{
         padding-inline: 0;
     }
 }
-
-@media (pointer: coarse) {
-    .slide-link-text{
-        display: auto;
-        bottom: 3%;
-        left: 50%;
-        transform: translateX(-50%);
-        color: white;
-    }
-}
