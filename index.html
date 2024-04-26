@@ -4,29 +4,178 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rahul Pandey</title>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <!--Title of the page-->
     <link rel="stylesheet" href="styles.css" />
+    <!-- Linking the CSS file-->
+    <!-- importing fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Space+Grotesk:wght@300..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
-    <div class="container">
-      <h1>Hi, I'm Rahul.</h1>
-      <p class="main-txt">I'm a first year undergraduate studying Information Technology at
-        Jadavpur University. <br>
-        <br>
-        Aspiring full-stack developer.
-      </p>
-    </div>
-    
-    <footer>
-      <p class="footer-txt">This website is a work in progress and will be updated as I improve my 
-        frontend knowledge and skills. I got this domain as a prize for participating
-        in an open source event, and it is valid only for a certain period of time. </p>
+    <header>
+      <div class="header-left">
+        <a href="#intro" class="logo-img">
+          <img src="/images/unnamed.jpg" alt="profile pic" class="header-img" />
+        </a>
+      </div>
+      <div class="header-right">
+        <li><a href="#about-content" class="nav-link">About</a></li>
+        <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+        <li><a href="#contact" class="nav-link">Contact Me</a></li>
+      </div>
+    </header>
+
+    <main>
+      <div class="intro-content" id="intro">
+        <div class="photo">
+          <img
+            class="my-photo"
+            src="/images/profile-pic-coffeehouse.jpg"
+            alt="a photo of me"
+          />
+        </div>
+        <div class="intro">Hi! I'm Rahul Pandey.</div>
+      </div>
+      <div class="about-content" id="about-content">
+        <div id="about">
+          <h1 class="about-header">About Me</h1>
+          <p class="about-text">
+            I'm a first year undergraduate student at Jadavpur University,
+            pursuing a B.E. in Information Technology.
+          </p>
+          <p class="about-text">
+            An aspiring full-stack developer, I'm also trying to explore a lot
+            in college, dipping my toes in fields like graphic design and video
+            editing.
+          </p>
+        </div>
+      </div>
+
+      <div class="portfolio-content" id="portfolio">
+        <h1 class="portfolio-header">Portfolio</h1>
+        <h2 class="portfolio-subheader">Some of the work I've done so far</h2>
+        <div class="slider-wrapper">
+          <div class="slider">
+            <div class="slides slide-div-1">
+              <p class="slide-link-text slide1-text">
+                A typographical trailer for Cypher 3331. <br /><a
+                  href="https://drive.google.com/file/d/1hbSCqQBLgh6fkH2Pj5BzRkTq8Dl02iqB/view?usp=drive_link"
+                  class="slide-link"
+                  target="_blank"
+                  >Click here</a
+                >
+                to watch it (sound on)
+              </p>
+              <img
+                id="slide-1"
+                src="/images/cypher-trailer-ss.png"
+                alt="A typographical trailer for Cypher 3331"
+              />
+            </div>
+            <div class="slides slide-div-2">
+              <p class="slide-link-text slide2-text">
+                MLAS Speakers Social Media Post
+              </p>
+              <img
+                id="slide-2"
+                src="/images/mlas-speaker-post.png"
+                alt="MLAS Speakers Social Media Post"
+              />
+            </div>
+            <div class="slides slide-div-3">
+              <p class="slide-link-text slide3-text">
+                Some Frontend Mentor Challenges<br /><a
+                  href="https://rahul-p19.github.io/frontend-mentor-solutions-rahul/"
+                  class="slide-link"
+                  target="_blank"
+                  >Click here</a
+                >
+                to visit.
+              </p>
+              <img
+                id="slide-3"
+                src="/images/frontend-mentor-product-preview.png"
+                alt="Some frontend challenges from Frontend Mentor"
+              />
+            </div>
+          </div>
+          <div class="slider-nav">
+            <a href="#slide-1" class="slider-nav-link"></a>
+            <a href="#slide-2" class="slider-nav-link"></a>
+            <a href="#slide-3" class="slider-nav-link"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-content" id="contact">
+        <h1 class="contact-header">Contact Me</h1>
+        <form
+          action="https://api.web3forms.com/submit"
+          method="POST"
+          class="contact-form"
+          autocomplete="off"
+        >
+          <!-- Replace with your Access Key -->
+          <input
+            type="hidden"
+            name="access_key"
+            value="fec671d5-e69e-4d76-998f-249d6df3ac5d"
+          />
+
+          <!-- Form Inputs. Each input must have a name="" attribute -->
+          <input
+            class="contact-name"
+            type="text"
+            name="name"
+            required
+            placeholder=" Your Name"
+          />
+          <input
+            class="contact-email"
+            type="email"
+            name="email"
+            required
+            placeholder="Your e-mail address"
+          />
+          <textarea
+            class="contact-msg"
+            name="message"
+            required
+            placeholder="Your message"
+          ></textarea>
+
+          <button class="contact-submit" type="submit">Submit</button>
+        </form>
+      </div>
+    </main>
+
+    <footer id="foot">
+      <p class="footer-text">&copy; Rahul Pandey</p>
+      <div class="footer-link">
+        <a
+          href="www.linkedin.com/in/rahul-pandey2005"
+          class="linkedin"
+          target="_blank"
+          ><img class="footer-img" src="/images/linkedin.png" alt="LinkedIn"
+        /></a>
+        <a href="https://github.com/rahul-p19" class="github" target="_blank"
+          ><img class="footer-img" src="/images/github.png" alt="GitHub"
+        /></a>
+      </div>
+      <div>
+        <p class="footer-text">
+          If you'd like to chat, feel free to reach out to me via e-mail:
+        </p>
+        <p class="footer-text">
+          <a class="mail-link" href="mailto:rahulpandey.dps@gmail.com"
+            >rahulpandey.dps@gmail.com</a
+          >
+        </p>
+      </div>
     </footer>
   </body>
 </html>

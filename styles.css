@@ -1,42 +1,486 @@
-*{
-    margin: 0;
+:root{
+    --visibility1: none;
+    --visibility2: none;
+    --visibility3: none;
 }
-body{
-    background-color: #000000;
-    font-family: Work sans;
+
+html {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(240,5%,5%) hsl(180, 4%, 19%);
+    overflow-x: hidden;
+}
+
+body {
+  background-color: hsl(240, 10%, 3.9%);
+  color: white;
+  font-family: "Work Sans";
+  font-size: 20px;
+  margin: 0;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-right {
+  display: flex;
+  justify-content: space-around;
+  margin-right: 8vw;
+  margin-top: 20px;
+}
+header li {
+  list-style: none;
+  margin-left: 40px;
+  position: relative;
+}
+
+h1{
+    font-family: Roboto Slab;
+}
+
+.header-img {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  margin: 15px 0px 15px 25px;
+  transition: all 0.3s;
+}
+
+.header-img:hover{
+    height: 35px;
+    width: 35px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: white;
+}
+
+.nav-link:hover{
+    cursor: none;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 0;
+  background-color: orangered;
+  bottom: 16px;
+  left: 50%;
+  right: 50%;
+  transition: all 0.5s;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+  left: 0;
+  right: 0;
+}
+
+
+main{
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
     justify-content: center;
+    flex-direction: column;
+    padding-top: 50px;
+}
+
+.intro-content{
+    font-size: 60px;
     height: 100vh;
-}
-
-p {
-    color: #f8f4f9;
-}
-
-.main-txt {
-    font-size: 20px;
-}
-.footer-txt {
-    font-size: 13px;
-    opacity: 0.6;
-    width: 90vw;
-    text-align: center;
-}
-h1 {
-    font-size: 50px;
-    margin-bottom: 15px;
-    color: #d24550;
-}
-.container {
-    text-align: center;
     display: flex;
-    align-items: center;
-    flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
-    height: 90vh;
-    width: 60vw;
+    align-items: center;
+}
+
+.intro{
+    width: 70%;
+    text-align: center;
+    transition: color 0.3s;
+    /* margin-left: 5%; */
+}
+
+.intro:hover{
+    color: orangered;
+    cursor: none;
+}
+
+.my-photo{
+    width: 100%;
+    height: 50vh;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.about-content{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: linear-gradient(rgba(5,5,5,0.8),rgba(5,5,5,0.9)), url('/images/jusl-bg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+#about{
+    width: 35%;
+    margin-left: 4%;
+}
+
+.about-text{
+    margin-left: 8%;
+    text-align: center;
+}
+
+.about-header{
+    font-size: 45px;
+    font-weight: 500;
+    text-align: center;
+    transition: color 0.3s;
+}
+
+.about-header:hover{
+    color: orangered;
+    cursor: none;
+}
+
+.portfolio-content{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.portfolio-header{
+    margin-top: 35px;
+    margin-bottom: 0px;
+    font-weight: 500;
+    transition: color 0.3s;
+    font-size: 45px;
+}
+
+.portfolio-header:hover{
+    color: orangered;
+    cursor: none;
+}
+
+.portfolio-subheader{
+    margin: 10px;
+    font-weight: 400;
+    font-size: 19px;
+    text-align: center;
+}
+
+.slider-wrapper{
+    position: relative;
+    max-width: 48rem;
+    margin: 3rem auto;
+}
+
+.slider {
+    display: flex;
+    aspect-ratio: 16/9;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.slides{
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.slides img{
+    height: 100%;
+}
+
+.slider-nav{
+    display: flex;
+    column-gap: 1rem;
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+}
+
+.slider-nav a{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: black;
+    opacity: 0.75;
+    transition: opacity ease 0.25s;
+}
+
+.slider-nav a:hover{
+    opacity: 1;
+}
+
+.slide-link-text{
+    position: absolute;
+    top: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 14px;
+    background-color: hsl(180, 4%, 19%);
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+.slide1-text{
+    display: var(--visibility1);
+}
+
+.slide2-text{
+ display: var(--visibility2)
+}
+
+.slide3-text{
+    display: var(--visibility3);
+}
+
+.slide-link{
+    color: white;
+}
+
+.slide-div-1:hover{
+    --visibility1: auto;
+}
+.slide-div-2:hover{
+    --visibility2: auto;
+}
+.slide-div-3:hover{
+    --visibility3: auto;
+}
+
+.contact-content{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-header{
+    font-weight: 500;
+    font-size: 45px;
+    transition: color 0.3s;
+    margin-top: 15vh;
+}
+
+.contact-header:hover{
+    color: orangered;
+    cursor: none;
+}
+
+.contact-form{
+    /* margin-top: 6vh; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+}
+
+.contact-name, .contact-email{
+    margin-bottom: 25px;
+    height: 25px;
+    width: 55%;
+    background-color: hsl(240, 10%, 3.9%);
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255,0.8);
+    color: white;
+    font-size: 17px;
+    font-family: Work Sans;
+}
+
+.contact-name:focus, .contact-email:focus {
+    outline: none;
+    border-bottom: 2px solid white;
+}
+
+.contact-msg{
+    height: 25px;
+    padding: 10px;
+    width: 70%;
+    background-color: hsl(240, 10%, 3.9%);
+    border: none;
+    border-bottom: 1px solid white;
+    color: white;
+    font-size: 17px;
+    font-family: Work Sans;
+    margin-top: 10px;
+    margin-bottom: 55px;
+    min-height: 25px;
+    min-width: 60%;
+    max-height: 100px;
+    max-width: 80%;
+}
+
+.contact-submit{
+    padding: 8px 18px;
+    border: none;
+    border-radius: 3px;
+    font-family: 'Work Sans';
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.contact-submit:hover{
+    font-size: 16px;
+    padding: 9px 19px;
+}
+
+#foot {
+    border-top: 0.1px solid rgba(255,255,255,0.5);
+    box-shadow: 0px 0px 3px rgba(255,255,255,0.5);
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    color: rgba(255,255,255,0.5);
+    font-size: 15px;
+}
+
+.footer-img{
+    height: 24px;
+    margin: 0 15px;
+    transition: height 0.3s;
+}
+
+.footer-img:hover{
+    height: 30px;
+}
+
+.footer-link{
+    margin-bottom: 0;
+}
+
+.footer-text{
+    margin-block: 10px;
+    position: relative;
+
+}
+
+.mail-link{
+    text-decoration: none;
+    color: white;
+    padding-inline: 30%;
+}
+
+.mail-link::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 0px;
+    background-color: orangered;
+    bottom: 16px;
+    left: 50%;
+    right: 50%;
+    transition: all 0.5s;
+}
+
+.mail-link:hover::after {
+  width: 50%;
+  left: 29%;
+}
+
+@media (min-width: 501px) and (max-width: 780px){
+    #about{
+        width: 80%;
+        margin-inline: auto;
+    }
+    .about-text{
+        margin-inline: 10px;
+    }
+    .slider-wrapper{
+        max-width: 90vw;
+        margin-block: auto;
+    }
+    .contact-form{
+        width: 60%;
+    }
+    .contact-name, .contact-email{
+        width: 70%;
+    }
+    .contact-msg{
+        width: 90%;
+    }
+}
+
+@media (max-width: 500px){
+    .header-right{
+        display:none;
+    }
+    main{
+        padding-top: 0px;
+    }
+    #about{
+        width: 100%;
+        margin-inline: auto;
+    }
+    .about-text{
+        margin-inline: 10px;
+    }
+
+    .portfolio-content{
+        height: 70vh;
+    }
+
+    .slider-wrapper{
+        max-width: 90vw;
+        margin-block: auto;
+    }
+
+    .slide-link-text{
+        font-size: 13px;
+        padding: 3px 6px;
+        width: 80%;
+    }
+
+    .slide2-text{
+        width: 40%;
+    }
+
+    .contact-form{
+        width: 80%;
+    }
+    .contact-name, .contact-email{
+        width: 70%;
+    }
+    .contact-msg{
+        width: 90%;
+    }
+    .footer-text{
+        text-align: center;
+    }
+    .mail-link{
+        margin-inline: auto;
+        padding-inline: 0;
+    }
+}
+
+@media (pointer: coarse) {
+    .slide-link-text{
+        display: auto;
+        bottom: 3%;
+        left: 50%;
+        transform: translateX(-50%);
+        color: white;
+    }
 }
