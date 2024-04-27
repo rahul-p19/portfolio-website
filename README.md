@@ -13,7 +13,7 @@ This is followed by a 'hero section', and then a small introduction about me.
 
 Then we have my portfolio section where I display some of the work I've done - in video editing, graphic design and simple frontend web development. It contains a simple HTML and CSS slider, and provides links to further inspect the projects.
 
-Then I included a simple contact form using Web3 forms to allow users to seamlessly provide feedback.
+Then I included a simple contact form using Web3Forms to allow users to seamlessly provide feedback.
 
 We then finish off with a footer with my name, social media links and email address.
 
